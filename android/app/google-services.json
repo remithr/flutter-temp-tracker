@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1094048646916",
+    "firebase_url": "https://temprature-tracker.firebaseio.com",
+    "project_id": "temprature-tracker",
+    "storage_bucket": "temprature-tracker.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1094048646916:android:93af0afecfe7a724703251",
+        "android_client_info": {
+          "package_name": "com.winjit.temptracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1094048646916-e346dd6qhs7crcjk2ba9kdvmf0nnhlis.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAblxmOqp0mKgyWH5rrcrD_xJuUU9stgNs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1094048646916-e346dd6qhs7crcjk2ba9kdvmf0nnhlis.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
