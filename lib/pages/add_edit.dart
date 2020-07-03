@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:temptracker/models/tem_tracker.dart';
+import 'package:temptracker/pages/home.dart';
 // import 'dart:math';
 import '../components/date_time_entry.dart';
 import 'package:numberpicker/numberpicker.dart';
@@ -15,11 +16,11 @@ class AddEntryDialog extends StatefulWidget {
   @override
   AddEntryDialogState createState() {
     if (tempToEdit != null) {
-      return new AddEntryDialogState(
-          tempToEdit.dateTime, tempToEdit.temprature, tempToEdit.note);
+      return new AddEntryDialogState(tempToEdit.dateTime, tempToEdit.temprature,
+          tempToEdit.note, tempToEdit.key);
     } else {
       return new AddEntryDialogState(
-          new DateTime.now(), initialTemprature, null);
+          new DateTime.now(), initialTemprature, null, null);
     }
   }
 }
@@ -28,9 +29,10 @@ class AddEntryDialogState extends State<AddEntryDialog> {
   DateTime _dateTime = new DateTime.now();
   double _temprature;
   String _note;
+  String _key;
   TextEditingController _textEditingController;
 
-  AddEntryDialogState(this._dateTime, this._temprature, this._note);
+  AddEntryDialogState(this._dateTime, this._temprature, this._note, this._key);
 
   Widget _createAppBar(BuildContext context) {
     return new AppBar(
@@ -42,10 +44,11 @@ class AddEntryDialogState extends State<AddEntryDialog> {
           opacity: widget.tempToEdit == null ? 0.0 : 1,
           child: new FlatButton(
             onPressed: () {
-              // debugPrint('$widget');
-              Navigator.of(context).pop(
-                new TempratureInput(_dateTime, _temprature, _note).delete(),
-              );
+              debugPrint(this._key);
+              mainReference.child(this._key).remove().then((_) {
+                debugPrint('success');
+                Navigator.of(context).pop();
+              });
             },
             child: Text(
               'Delete',
