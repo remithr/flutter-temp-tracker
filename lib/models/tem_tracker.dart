@@ -23,7 +23,9 @@ class TempratureInput {
     };
   }
 
-  delete() {
+  addEditDelete(key, ops) {
+    print(key);
+    print(ops);
     // TempratureInput.fromSnapshot().key
   }
 }

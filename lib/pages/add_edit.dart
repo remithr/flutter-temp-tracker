@@ -46,7 +46,7 @@ class AddEntryDialogState extends State<AddEntryDialog> {
             onPressed: () {
               debugPrint(this._key);
               mainReference.child(this._key).remove().then((_) {
-                debugPrint('success');
+                // debugPrint('success');
                 Navigator.of(context).pop();
               });
             },
