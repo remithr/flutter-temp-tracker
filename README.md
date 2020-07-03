@@ -1,4 +1,4 @@
 # temptracker
 
-A new Flutter project. 
+A simple project to record and save the daily temprature built using Flutter
 
