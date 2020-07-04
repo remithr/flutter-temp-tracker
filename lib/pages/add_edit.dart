@@ -48,6 +48,7 @@ class AddEntryDialogState extends State<AddEntryDialog> {
               mainReference.child(this._key).remove().then((_) {
                 // debugPrint('success');
                 Navigator.of(context).pop();
+                // delete the firebase instance to reflect changes in the firebase list
               });
             },
             child: Text(

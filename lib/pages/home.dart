@@ -42,7 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ? 0.0
               : tempInput[index].temprature - tempInput[index - 1].temprature;
           return new InkWell(
-            onTap: () => _openEditEntryDialog(tempInput[index]),
+            onTap: () => _openEditEntryDialog(tempInput[index], index),
             child: new TempListItem(tempInput[index], difference),
           );
         },
@@ -96,7 +96,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   //  EDIT TEMPRATURE ENTRY
-  _openEditEntryDialog(TempratureInput tinp) {
+  _openEditEntryDialog(TempratureInput tinp, int index) {
     Navigator.of(context)
         .push(
       new MaterialPageRoute<TempratureInput>(
@@ -108,7 +108,17 @@ class _MyHomePageState extends State<MyHomePage> {
     )
         .then((TempratureInput editEntry) {
       if (editEntry != null) {
+        print('111');
+        print(editEntry);
         mainReference.child(tinp.key).set(editEntry.toJson());
+      } else {
+        print('116');
+        print(editEntry);
+        print(index);
+        print(tempInput);
+        setState(() {
+          tempInput.removeAt(index);
+        });
       }
     });
   }
